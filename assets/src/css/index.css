@@ -1,0 +1,190 @@
+:root {
+    --navbar-color: #ddd;
+    --primary-ontirip:#8aee;
+    --text-color: #333;
+    --active-color: #ddfffa;
+    --hover-color: #fff;
+    --primary-color: #f0f0f0;
+    --primary-light-color: #fffedd;
+    --bg-color: #ff7200;
+    --border-color: #333;
+    --card-bg: #fff;
+    --bg-footer:#ddd;
+}
+
+[data-theme="dark"] {
+    --bg-footer:#333;
+    --navbar-color: #222;
+    --text-color: #eee;
+    --active-color: #121212;
+    --hover-color: #444;
+    --primary-color: #222;
+    --primary-light-color: #333;
+    --bg-color: #ff7200;
+    --border-color: #555;
+    --card-bg: #1e1e1e;
+    --primary-ontirip:rgb(101, 161, 240);
+}
+
+/* AUTO MODE (system preference) */
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme]) {
+        --bg-footer:#333;
+        --navbar-color: #222;
+        --text-color: #eee;
+        --active-color: #121212;
+        --hover-color: #444;
+        --primary-color: #222;
+        --primary-light-color: #333;
+        --bg-color: #ff7200;
+        --border-color: #555;
+        --card-bg: #1e1e1e;
+        --primary-ontirip:rgb(101, 161, 240);
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    :root:not([data-theme]) {
+        --navbar-color: #ddd;
+        --bg-footer:#ddd;
+        --text-color: #333;
+        --active-color: #ddfffa;
+        --hover-color: #fff;
+        --primary-color: #f0f0f0;
+        --primary-light-color: #fffedd;
+        --bg-color: #ff7200;
+        --border-color: lightblue;
+        --card-bg: #fff;
+        --primary-ontirip:teal;
+        /* --primary-ontirip:#ffe710; */
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    color: var(--text-color);
+    background-color: var(--primary-color);
+    transition: background 0.3s, color 0.3s;
+    scroll-behavior: smooth;
+}
+
+.navbar {
+    width: 100%;
+    background-color: var(--navbar-color);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.navbar .container {
+    max-width: 1600px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 1rem;
+}
+
+.navbar-brand {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: var(--text-color);
+}
+
+.navbar-nav {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+.nav-link {
+    text-decoration: none;
+    padding: 10px 15px;
+    font-size: 1rem;
+    border-radius: 8px;
+    font-weight: 500;
+    color: var(--text-color);
+    transition: background 0.3s;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    background-color: var(--hover-color);
+    border-radius: 8px;
+}
+
+.nav-link::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0%;
+    width: 100%;
+    height: 2px;
+    background-color: var(--bg-color);
+    transition: left 0.4s ease-out;
+}
+
+.nav-link:hover::before,
+.nav-link.active::before {
+    left: 100%;
+}
+
+.mode-toggle:nth-child(1) {
+    cursor: pointer;
+    background-color: var(--hover-color);
+    border: none;
+    padding: 8px 12px;
+    border-radius: 8px;
+    color: var(--text-color);
+    font-weight: bold;
+}
+.mode-toggle:nth-child(2) {
+    cursor: pointer;
+    background-color: var(--hover-color);
+    border: none;
+    padding: 8px 12px;
+    border-radius: 8px;
+    color: var(--text-color);
+    font-weight: bold;
+}
+.mode-toggle:nth-child(3) {
+    cursor: pointer;
+    background-color: var(--primary-ontirip);
+    border: none;
+    padding: 8px 12px;
+    border-radius: 8px;
+    color: var(--text-color);
+    font-weight: bold;
+}
+
+/* banner */
+.banner{
+    position: relative;
+    width: 100%;
+}
+.banner .sec1{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: min(2rem ,5vw );
+}
+footer{
+    width: 100%;
+    height: 200px;
+    background-color: var(--bg-footer);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: flex;
+}
